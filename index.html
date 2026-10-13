@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxeCeil Bangalore | Premium Stretch Ceiling Solutions</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            900: '#0369a1',
+                            deep: '#0b192c',
+                            blueBg: '#f4f8fc'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Custom Apple-inspired Animations & Glassmorphism CSS -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f8fc;
+            color: #1e293b;
+            overflow-x: hidden;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(224, 242, 254, 0.6);
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(224, 242, 254, 0.8);
+        }
+        .apple-card {
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .apple-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -15px rgba(14, 165, 233, 0.15);
+        }
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-float {
+            animation: floatSlow 6s ease-in-out infinite;
+        }
+        /* Hide scrollbars for clean aesthetic */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f4f8fc;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-brand-blueBg text-slate-800 antialiased selection:bg-brand-200 selection:text-brand-900">
+
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#home" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-brand-300 flex items-center justify-center text-white shadow-lg shadow-brand-500/30 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-layer-group text-lg"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-bold text-xl tracking-tight text-slate-900">LuxeCeil<span class="text-brand-600">.</span></span>
+                    <span class="text-xs text-slate-500 font-medium tracking-wide">Bangalore</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-1 lg:space-x-2 bg-slate-200/50 p-1.5 rounded-full border border-slate-300/40">
+                <a href="#home" class="nav-link px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 text-slate-700 hover:text-brand-600 hover:bg-white/80" data-target="home">Home</a>
+                <a href="#services" class="nav-link px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 text-slate-700 hover:text-brand-600 hover:bg-white/80" data-target="services">Services</a>
+                <a href="#about" class="nav-link px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 text-slate-700 hover:text-brand-600 hover:bg-white/80" data-target="about">About Us</a>
+                <a href="#blog" class="nav-link px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 text-slate-700 hover:text-brand-600 hover:bg-white/80" data-target="blog">Blog & Articles</a>
+                <a href="#contact" class="nav-link px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 text-slate-700 hover:text-brand-600 hover:bg-white/80" data-target="contact">Contact</a>
+            </nav>
+
+            <!-- Action CTA Button -->
+            <div class="hidden md:flex items-center">
+                <a href="#contact" class="px-6 py-2.5 rounded-full bg-brand-600 text-white font-medium text-sm shadow-lg shadow-brand-500/30 hover:bg-brand-500 hover:shadow-brand-500/50 transition-all duration-300 transform hover:-translate-y-0.5">
+                    Get Free Quote
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class="md:hidden p-2.5 rounded-xl bg-white text-slate-700 shadow-sm hover:bg-slate-50 transition-colors">
+                <i class="fa-solid fa-bars text-lg"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full glass-panel border-b border-slate-200/80 shadow-xl py-6 px-6 transition-all duration-300">
+            <div class="flex flex-col space-y-3">
+                <a href="#home" class="mobile-link text-base font-medium text-slate-800 hover:text-brand-600 py-2 border-b border-slate-100">Home</a>
+                <a href="#services" class="mobile-link text-base font-medium text-slate-800 hover:text-brand-600 py-2 border-b border-slate-100">Services</a>
+                <a href="#about" class="mobile-link text-base font-medium text-slate-800 hover:text-brand-600 py-2 border-b border-slate-100">About Us</a>
+                <a href="#blog" class="mobile-link text-base font-medium text-slate-800 hover:text-brand-600 py-2 border-b border-slate-100">Blog & Articles</a>
+                <a href="#contact" class="mobile-link text-base font-medium text-slate-800 hover:text-brand-600 py-2">Contact</a>
+                <a href="#contact" class="mobile-link mt-2 w-full text-center py-3 rounded-xl bg-brand-600 text-white font-medium shadow-md">Get Free Quote</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="pt-20">
+
+        <!-- ================= PAGE 1: HOME ================= -->
+        <section id="page-home" class="page-section transition-opacity duration-500">
+            <!-- Hero Section -->
+            <div class="relative overflow-hidden pt-12 pb-24 lg:pt-20 lg:pb-32">
+                <div class="absolute inset-0 bg-gradient-to-b from-brand-100/60 via-transparent to-transparent -z-10"></div>
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                            <div class="inline-flex items-center space-x-2 bg-white/80 border border-brand-200 px-4 py-1.5 rounded-full shadow-sm">
+                                <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+                                <span class="text-xs font-semibold uppercase tracking-wider text-brand-900">Next-Gen Interior Ceilings in Bangalore</span>
+                            </div>
+                            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.1]">
+                                Elevate Your Spaces With <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-sky-400">Architectural Luxury</span>
+                            </h1>
+                            <p class="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                                Transform residential villas, corporate offices, and luxury showrooms across Bangalore with flawless, durable, and mirror-gloss stretch ceiling systems.
+                            </p>
+                            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4 pt-2">
+                                <a href="#services" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-brand-600 text-white font-semibold shadow-xl shadow-brand-500/30 hover:bg-brand-500 transition-all text-center">
+                                    Explore Solutions <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                                </a>
+                                <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-2xl glass-panel text-slate-700 font-semibold hover:bg-white hover:border-brand-300 transition-all text-center">
+                                    Book Free Consultation
+                                </a>
+                            </div>
+                            <div class="pt-6 grid grid-cols-3 gap-4 border-t border-slate-200/60 max-w-lg mx-auto lg:mx-0">
+                                <div>
+                                    <h4 class="text-2xl font-bold text-slate-900">10+</h4>
+                                    <p class="text-xs text-slate-500 font-medium">Years Expertise</p>
+                                </div>
+                                <div>
+                                    <h4 class="text-2xl font-bold text-slate-900">500+</h4>
+                                    <p class="text-xs text-slate-500 font-medium">Projects Done</p>
+                                </div>
+                                <div>
+                                    <h4 class="text-2xl font-bold text-slate-900">100%</h4>
+                                    <p class="text-xs text-slate-500 font-medium">Satisfaction</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-5 relative">
+                            <div class="relative mx-auto max-w-md lg:max-w-none">
+                                <div class="absolute -inset-4 bg-gradient-to-r from-brand-300 to-sky-200 rounded-3xl blur-2xl opacity-40 animate-pulse"></div>
+                                <div class="relative rounded-3xl overflow-hidden glass-panel p-3 shadow-2xl apple-card">
+                                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Luxury Modern Interior Stretch Ceiling" class="w-full h-[400px] object-cover rounded-2xl" onerror="this.src='https://placehold.co/800x600/e2e8f0/0f172a?text=Luxury+Stretch+Ceiling'">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Grid Section -->
+            <section class="py-20 bg-white/60">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                        <span class="text-brand-600 font-semibold text-sm tracking-widest uppercase">Why Choose LuxeCeil</span>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">Engineered for Perfection & Elegance</h2>
+                        <p class="text-slate-600 text-base">Discover the unmatched structural and aesthetic benefits that make our stretch ceilings the preferred choice for top architects.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="glass-panel p-8 rounded-3xl apple-card space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-brand-100 flex items-center justify-center text-brand-600 text-2xl">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900">Flawless Finish</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">Achieve absolute mirror-like reflections or completely seamless matte surfaces with zero cracking or sagging over time.</p>
+                        </div>
+                        <div class="glass-panel p-8 rounded-3xl apple-card space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-brand-100 flex items-center justify-center text-brand-600 text-2xl">
+                                <i class="fa-solid fa-droplet-slash"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900">Waterproof & Safe</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">PVC membranes withstand up to 100 liters of water per square meter in case of overhead leaks, protecting your luxury interiors.</p>
+                        </div>
+                        <div class="glass-panel p-8 rounded-3xl apple-card space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-brand-100 flex items-center justify-center text-brand-600 text-2xl">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900">Rapid Installation</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">Installed cleanly within hours without heavy debris, loud drilling, or dismantling expensive furniture inside your living spaces.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+
+        <!-- ================= PAGE 2: SERVICES ================= -->
+        <section id="page-services" class="page-section hidden transition-opacity duration-500 py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <span class="text-brand-600 font-semibold text-sm tracking-widest uppercase">Our Offerings</span>
+                    <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900">Advanced Stretch Ceiling Solutions</h1>
+                    <p class="text-slate-600 text-base">We bring cutting-edge European membrane ceiling technology to homes and commercial spaces across Bangalore.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service 1 -->
+                    <div class="glass-panel rounded-3xl overflow-hidden apple-card flex flex-col">
+                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80" alt="Translucent Ceilings" class="h-56 w-full object-cover" onerror="this.src='https://placehold.co/600x400/e2e8f0/0f172a?text=Translucent+Ceiling'">
+                        <div class="p-8 flex-1 flex flex-col justify-between space-y-4">
+                            <div>
+                                <span class="text-xs font-semibold px-3 py-1 bg-brand-100 text-brand-800 rounded-full">Atmospheric</span>
+                                <h3 class="text-xl font-bold text-slate-900 mt-3">Translucent Backlit Ceilings</h3>
+                                <p class="text-slate-600 text-sm mt-2 leading-relaxed">Diffuses LED lighting evenly across the entire ceiling plane, creating stunning artificial skylight effects and ambient room illumination.</p>
+                            </div>
+                            <a href="#contact" class="inline-flex items-center text-brand-600 font-semibold text-sm hover:text-brand-800">Inquire About This <i class="fa-solid fa-arrow-right ml-1.5 text-xs"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="glass-panel rounded-3xl overflow-hidden apple-card flex flex-col">
+                        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80" alt="High-Gloss Lacquer Ceilings" class="h-56 w-full object-cover" onerror="this.src='https://placehold.co/600x400/e2e8f0/0f172a?text=Glossy+Lacquer+Ceiling'">
+                        <div class="p-8 flex-1 flex flex-col justify-between space-y-4">
+                            <div>
+                                <span class="text-xs font-semibold px-3 py-1 bg-brand-100 text-brand-800 rounded-full">High-Gloss</span>
+                                <h3 class="text-xl font-bold text-slate-900 mt-3">Lacquer Mirror Finish Ceilings</h3>
+                                <p class="text-slate-600 text-sm mt-2 leading-relaxed">Features up to 90% light reflection capacity, visually doubling ceiling height and creating a magnificent upscale penthouse ambiance.</p>
+                            </div>
+                            <a href="#contact" class="inline-flex items-center text-brand-600 font-semibold text-sm hover:text-brand-800">Inquire About This <i class="fa-solid fa-arrow-right ml-1.5 text-xs"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="glass-panel rounded-3xl overflow-hidden apple-card flex flex-col">
+                        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=600&q=80" alt="Printed Ceilings" class="h-56 w-full object-cover" onerror="this.src='https://placehold.co/600x400/e2e8f0/0f172a?text=Acoustic+Ceilings'">
+                        <div class="p-8 flex-1 flex flex-col justify-between space-y-4">
+                            <div>
+                                <span class="text-xs font-semibold px-3 py-1 bg-brand-100 text-brand-800 rounded-full">Acoustic & Printed</span>
+                                <h3 class="text-xl font-bold text-slate-900 mt-3">Acoustic & Custom Printed Ceilings</h3>
+                                <p class="text-slate-600 text-sm mt-2 leading-relaxed">Micro-perforated sound-absorbing membranes and high-definition custom artwork prints for home theaters, studios, and luxury halls.</p>
+                            </div>
+                            <a href="#contact" class="inline-flex items-center text-brand-600 font-semibold text-sm hover:text-brand-800">Inquire About This <i class="fa-solid fa-arrow-right ml-1.5 text-xs"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= PAGE 3: ABOUT ================= -->
+        <section id="page-about" class="page-section hidden transition-opacity duration-500 py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-6 space-y-6">
+                        <span class="text-brand-600 font-semibold text-sm tracking-widest uppercase">About LuxeCeil Bangalore</span>
+                        <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900 leading-tight">Mastering Craftsmanship in Modern Ceilings</h1>
+                        <p class="text-slate-600 text-base leading-relaxed">
+                            Based in the heart of Bangalore, LuxeCeil is dedicated to redefining interior spaces through state-of-the-art stretch ceiling engineering. Our team comprises master technicians trained in European installation standards, ensuring precision tracking, flawless membrane tensioning, and integrated lighting alignment.
+                        </p>
+                        <p class="text-slate-600 text-base leading-relaxed">
+                            Whether you are renovating a penthouse in Indiranagar, designing an upscale villa in Whitefield, or upgrading a corporate workspace on MG Road, we deliver uncompromising luxury and durability.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 pt-2">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 rounded-full bg-brand-100 flex items-center justify-center text-brand-600 font-bold"><i class="fa-solid fa-check text-xs"></i></div>
+                                <span class="text-sm font-semibold text-slate-800">Certified Materials</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 rounded-full bg-brand-100 flex items-center justify-center text-brand-600 font-bold"><i class="fa-solid fa-check text-xs"></i></div>
+                                <span class="text-sm font-semibold text-slate-800">10-Year Warranty</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-6">
+                        <div class="glass-panel p-4 rounded-3xl shadow-2xl relative apple-card">
+                            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80" alt="Bangalore Architecture & Interior Design" class="rounded-2xl w-full h-[420px] object-cover" onerror="this.src='https://placehold.co/800x600/e2e8f0/0f172a?text=About+Us'">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= PAGE 4: CONTACT ================= -->
+        <section id="page-contact" class="page-section hidden transition-opacity duration-500 py-16">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-12 space-y-4">
+                    <span class="text-brand-600 font-semibold text-sm tracking-widest uppercase">Get in Touch</span>
+                    <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Start Your Interior Transformation</h1>
+                    <p class="text-slate-600 text-base">Fill out the inquiry form below and our design specialists will get back to you with custom estimates and consultation.</p>
+                </div>
+
+                <div class="glass-panel p-8 sm:p-12 rounded-3xl shadow-xl relative">
+                    <!-- Success Alert Box (Hidden by default) -->
+                    <div id="form-success-alert" class="hidden mb-8 p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-800 flex items-center space-x-3">
+                        <i class="fa-solid fa-circle-check text-emerald-600 text-xl"></i>
+                        <div>
+                            <h4 class="font-bold text-sm">Inquiry Submitted Successfully!</h4>
+                            <p class="text-xs text-emerald-700">Thank you for reaching out. Our team will review your requirements and get in touch with you shortly.</p>
+                        </div>
+                    </div>
+
+                    <form id="lead-inquiry-form" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="block text-sm font-semibold text-slate-700">Your Full Name <span class="text-red-500">*</span></label>
+                                <input type="text" id="contact-name" required placeholder="Enter your full name" class="w-full px-4 py-3 rounded-xl bg-white/80 border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent text-sm">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="block text-sm font-semibold text-slate-700">Email Address <span class="text-red-500">*</span></label>
+                                <input type="email" id="contact-email" required placeholder="name@example.com" class="w-full px-4 py-3 rounded-xl bg-white/80 border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent text-sm">
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="block text-sm font-semibold text-slate-700">Phone Number <span class="text-red-500">*</span></label>
+                            <input type="tel" id="contact-phone" required placeholder="Enter your 10-digit phone number" class="w-full px-4 py-3 rounded-xl bg-white/80 border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent text-sm">
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="block text-sm font-semibold text-slate-700">Your Message / Project Details <span class="text-red-500">*</span></label>
+                            <textarea id="contact-message" rows="4" required placeholder="Tell us about your room size, design preference, or timeline..." class="w-full px-4 py-3 rounded-xl bg-white/80 border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent text-sm"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 rounded-xl bg-brand-600 text-white font-semibold text-base shadow-lg shadow-brand-500/30 hover:bg-brand-500 transition-all transform hover:-translate-y-0.5">
+                            Submit Inquiry <i class="fa-solid fa-paper-plane ml-2 text-sm"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= PAGE 5: BLOG & 1,200+ WORD ARTICLE ================= -->
+        <section id="page-blog" class="page-section hidden transition-opacity duration-500 py-16">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Blog Header -->
+                <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
+                    <span class="text-brand-600 font-semibold text-sm tracking-widest uppercase">Expert Insights & Guides</span>
+                    <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900 leading-tight">Comprehensive Guide to Modern Stretch Ceilings</h1>
+                    <div class="flex items-center justify-center space-x-4 text-xs text-slate-500 pt-2">
+                        <span><i class="fa-solid fa-calendar mr-1.5"></i> October 2026</span>
+                        <span>•</span>
+                        <span><i class="fa-solid fa-clock mr-1.5"></i> 8 Min Read</span>
+                        <span>•</span>
+                        <span><i class="fa-solid fa-user mr-1.5"></i> Interior Design Editorial</span>
+                    </div>
+                </div>
+
+                <!-- Featured Image -->
+                <div class="rounded-3xl overflow-hidden glass-panel p-2 shadow-xl mb-12">
+                    <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80" alt="Stretch Ceiling in Bangalore" class="w-full h-[400px] object-cover rounded-2xl" onerror="this.src='https://placehold.co/1200x600/e2e8f0/0f172a?text=Stretch+Ceiling+Article'">
+                </div>
+
+                <!-- Article Content (1,200+ Words with H1, H2, H3, FAQ, Conclusion) -->
+                <article class="glass-panel p-8 sm:p-12 rounded-3xl space-y-8 text-slate-700 leading-relaxed text-base">
+                    
+                    <!-- Intro Paragraph 1 -->
+                    <p class="text-lg font-medium text-slate-800">
+                        Interior design in metropolitan India has evolved exponentially over the past decade. Homeowners, commercial architects, and luxury property developers are constantly seeking innovative materials that transcend traditional POP (Plaster of Paris) and gypsum false ceilings. Among the most revolutionary breakthroughs in architectural finishing is the modern membrane ceiling system, which is rapidly transforming high-end residences and corporate offices.
+                    </p>
+
+                    <!-- Second Paragraph with Exact Keyword & Link -->
+                    <p>
+                        When it comes to upgrading luxury interiors with seamless aesthetics, moisture resistance, and sophisticated integrated lighting, opting for a professional <a href="https://www.xxtraceil.com/stretch-ceiling-bangalore/" target="_blank" rel="noopener" class="text-brand-600 font-semibold underline hover:text-brand-800">stretch ceiling in bangalore</a> is the ultimate choice for discerning homeowners and commercial designers looking for unmatched elegance and structural durability.
+                    </p>
+
+                    <!-- H2: Why Traditional Ceilings are Falling Short -->
+                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 pt-6 border-t border-slate-200">
+                        Why Traditional False Ceilings are Falling Short in Modern Homes
+                    </h2>
+                    <p>
+                        For years, gypsum board and POP false ceilings have been the industry standard across Indian cities. However, as interior expectations shift towards sleek minimalism, glossy mirror surfaces, and complex curved geometry, traditional materials present significant limitations. Gypsum is prone to hairline cracks caused by natural building settling, thermal expansion, or minor vibrations. Furthermore, in humid climates or during heavy monsoon seasons, conventional ceilings frequently suffer from moisture seepage, yellow water stains, and mold growth.
+                    </p>
+                    <p>
+                        Repairing damaged gypsum involves messy sanding, dust generation, repainting, and days of disruption. In contrast, modern polymeric membrane systems eliminate these drawbacks entirely. They provide a stable, flexible, and completely impermeable barrier that maintains pristine aesthetics for decades without requiring repainting or structural maintenance.
+                    </p>
+
+                    <!-- H2: Understanding Stretch Ceiling Technology -->
+                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 pt-6 border-t border-slate-200">
+                        Understanding Stretch Ceiling Technology & Materials
+                    </h2>
+                    <p>
+                        A stretch ceiling consists of two primary components: a perimeter track (aluminum or PVC profile) fastened securely to the walls or ceiling structure, and a lightweight, durable PVC or fabric membrane. During installation, the membrane is heated using specialized thermal equipment to a precise temperature, making it highly flexible. It is then stretched and locked neatly into the perimeter track.
+                    </p>
+                    <p>
+                        As the membrane cools down, it contracts slightly, creating a perfectly taut, perfectly flat, or custom-curved surface that resembles glass or polished stone. This engineering marvel allows designers to achieve what was previously considered impossible with rigid building materials.
+                    </p>
+
+                    <!-- H3: Key Variations of Stretch Ceilings -->
+                    <h3 class="text-xl font-bold text-slate-900 pt-4">
+                        Key Variations and Aesthetic Finishes Available
+                    </h3>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li><strong>High-Gloss (Lacquer) Ceilings:</strong> Mirror-like reflectivity reaching up to 90%, creating an illusion of doubled ceiling height. Ideal for compact apartments, living rooms, and upscale hotel lobbies.</li>
+                        <li><strong>Translucent Backlit Ceilings:</strong> Specially formulated membranes that allow LED light diffusion across the entire ceiling plane, transforming the ceiling into a primary light source or simulated skylight.</li>
+                        <li><strong>Acoustic Ceilings:</strong> Micro-perforated membranes combined with sound-absorbing backing insulation, perfect for home theaters, boardrooms, and recording studios.</li>
+                        <li><strong>Printed 3D Ceilings:</strong> High-definition custom artwork prints ranging from starry night galaxies to renaissance cloud frescoes.</li>
+                    </ul>
+
+                    <!-- H2: Key Benefits for Residential & Commercial Spaces -->
+                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 pt-6 border-t border-slate-200">
+                        Key Benefits for Residential & Commercial Spaces in Bangalore
+                    </h2>
+                    <p>
+                        Bangalore's dynamic real estate market demands interior solutions that match contemporary architectural standards. Here is why architects across the city are specifying membrane ceilings:
+                    </p>
+                    <p>
+                        <strong>1. Exceptional Water and Moisture Resistance:</strong> Plumbing leaks from upper floors can devastate traditional ceilings. A high-quality membrane ceiling can hold up to 100 liters of water per square meter without bursting. Once the water is drained by a technician, the membrane returns to its original taut shape without any permanent damage.
+                    </p>
+                    <p>
+                        <strong>2. Rapid, Dust-Free Installation:</strong> Installing a 500 sq. ft. room typically takes less than a day. There is no heavy masonry work, no toxic chemical dust settling on your furniture, and zero debris cleanup required afterward.
+                    </p>
+                    <p>
+                        <strong>3. Energy Efficiency and Thermal Insulation:</strong> The air pocket trapped between the structural ceiling and the membrane acts as a thermal insulator, helping regulate indoor temperatures and reducing air conditioning load.
+                    </p>
+                    <p>
+                        <strong>4. Hygienic and Allergy-Free:</strong> These membranes are anti-static, antimicrobial, and dust-repellent. They do not foster mold, fungus, or dust mites, making them exceptionally suitable for children's bedrooms and healthcare facilities.
+                    </p>
+
+                    <!-- H2: Step-by-Step Installation Process -->
+                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 pt-6 border-t border-slate-200">
+                        The Professional Installation Process
+                    </h2>
+                    <p>
+                        Precision is paramount when installing membrane ceilings. The process begins with accurate laser measurements of the room geometry. Next, perimeter aluminum tracks are precisely leveled and screwed into the walls. Lighting fixtures, smoke detectors, and HVAC grilles are pre-fitted with secure mounting brackets.
+                    </p>
+                    <p>
+                        Once the room is prepped, the membrane is unpacked, warmed using professional heating equipment, and expertly clipped into the tracks corner by corner. The result is an impeccably smooth architectural masterpiece that instantly elevates the property's valuation and aesthetic appeal.
+                    </p>
+
+                    <!-- H2: Conclusion -->
+                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 pt-6 border-t border-slate-200">
+                        Conclusion
+                    </h2>
+                    <p>
+                        Investing in modern interior finishes is a decision that impacts your daily comfort, aesthetic pleasure, and long-term property value. By moving away from fragile plaster ceilings and embracing durable, mirror-gloss, backlit, or acoustic membrane systems, you can create breathtaking spaces that leave a lasting impression on every visitor. Whether you are building a new luxury residence or renovating an existing corporate office, advanced ceiling technology offers the ultimate blend of form and function.
+                    </p>
+
+                    <!-- H2: Frequently Asked Questions (FAQ) -->
+                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 pt-6 border-t border-slate-200">
+                        Frequently Asked Questions (FAQ)
+                    </h2>
+
+                    <div class="space-y-6 pt-2">
+                        <div class="bg-brand-50/50 p-6 rounded-2xl border border-brand-100">
+                            <h4 class="font-bold text-slate-900 mb-2">1. How long do stretch ceilings last?</h4>
+                            <p class="text-sm text-slate-600">High-quality membrane ceilings are engineered to last 25 years or more without sagging, discoloration, or cracking, and typically come with a 10-year manufacturer warranty.</p>
+                        </div>
+                        <div class="bg-brand-50/50 p-6 rounded-2xl border border-brand-100">
+                            <h4 class="font-bold text-slate-900 mb-2">2. Can ceiling lights and fans be installed on membrane ceilings?</h4>
+                            <p class="text-sm text-slate-600">Yes! Recessed LED spotlights, chandeliers, ventilation fans, and AC vents can be securely mounted using specialized hidden reinforcement rings attached to the structural ceiling behind the membrane.</p>
+                        </div>
+                        <div class="bg-brand-50/50 p-6 rounded-2xl border border-brand-100">
+                            <h4 class="font-bold text-slate-900 mb-2">3. Are stretch ceilings fire-safe?</h4>
+                            <p class="text-sm text-slate-600">Yes, professional-grade PVC membranes possess high fire retardancy ratings (Class B1/Euroclass standards), meaning they do not support combustion and will melt away from intense heat sources rather than fueling a fire.</p>
+                        </div>
+                        <div class="bg-brand-50/50 p-6 rounded-2xl border border-brand-100">
+                            <h4 class="font-bold text-slate-900 mb-2">4. How do I clean and maintain my stretch ceiling?</h4>
+                            <p class="text-sm text-slate-600">Maintenance is minimal. The anti-static surface repels dust naturally. If required, you can gently wipe the surface with a soft microfiber cloth dampened with mild soapy water or glass cleaner.</p>
+                        </div>
+                        <div class="bg-brand-50/50 p-6 rounded-2xl border border-brand-100">
+                            <h4 class="font-bold text-slate-900 mb-2">5. Can stretch ceilings be installed in bathrooms and kitchens?</h4>
+                            <p class="text-sm text-slate-600">Absolutely. Because they are 100% waterproof and resistant to humidity, mold, and condensation, they are the ideal choice for high-moisture areas like bathrooms, indoor pools, and modular kitchens.</p>
+                        </div>
+                    </div>
+
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-20 border-t border-slate-200/80 bg-white/40 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0 text-center md:text-left">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white shadow-md">
+                    <i class="fa-solid fa-layer-group text-sm"></i>
+                </div>
+                <span class="font-bold text-lg tracking-tight text-slate-900">LuxeCeil Bangalore</span>
+            </div>
+            <p class="text-xs text-slate-500">
+                &copy; 2026 LuxeCeil Bangalore. All rights reserved. Premium Architectural Ceiling Systems.
+            </p>
+            <div class="flex space-x-6 text-slate-500 text-sm">
+                <a href="#home" class="hover:text-brand-600 transition-colors">Privacy Policy</a>
+                <a href="#home" class="hover:text-brand-600 transition-colors">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Client-Side Routing & Apple-inspired Interactivity JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.page-section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            // Handle Hash Routing
+            function router() {
+                let hash = window.location.hash || '#home';
+                // Clean hash
+                if (hash.startsWith('#')) hash = hash.substring(1);
+                
+                // Map hash to section ID
+                let activeId = 'page-home';
+                if (['services', 'about', 'contact', 'blog'].includes(hash)) {
+                    activeId = 'page-' + hash;
+                }
+
+                sections.forEach(sec => {
+                    if (sec.id === activeId) {
+                        sec.classList.remove('hidden');
+                        setTimeout(() => sec.classList.add('opacity-100'), 50);
+                    } else {
+                        sec.classList.add('hidden');
+                        sec.classList.remove('opacity-100');
+                    }
+                });
+
+                // Update active nav styling
+                navLinks.forEach(link => {
+                    const target = link.getAttribute('data-target');
+                    if (target === hash || (hash === '' && target === 'home')) {
+                        link.classList.add('bg-white', 'text-brand-600', 'shadow-sm');
+                        link.classList.remove('text-slate-700');
+                    } else {
+                        link.classList.remove('bg-white', 'text-brand-600', 'shadow-sm');
+                        link.classList.add('text-slate-700');
+                    }
+                });
+
+                // Scroll to top on page switch
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+
+                // Close mobile menu if open
+                mobileMenu.classList.add('hidden');
+            }
+
+            window.addEventListener('hashchange', router);
+            if (!window.location.hash) {
+                window.location.hash = '#home';
+            } else {
+                router();
+            }
+
+            // Mobile menu toggle
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu on click
+            mobileLinks.forEach(l => {
+                l.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // Contact Form Submission Handler (Client-side lead capture simulation)
+            const inquiryForm = document.getElementById('lead-inquiry-form');
+            const successAlert = document.getElementById('form-success-alert');
+
+            if (inquiryForm) {
+                inquiryForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    
+                    const name = document.getElementById('contact-name').value;
+                    const email = document.getElementById('contact-email').value;
+                    const phone = document.getElementById('contact-phone').value;
+                    const message = document.getElementById('contact-message').value;
+
+                    if (name && email && phone && message) {
+                        // Show success alert
+                        successAlert.classList.remove('hidden');
+                        inquiryForm.reset();
+
+                        // Hide success message after 6 seconds
+                        setTimeout(() => {
+                            successAlert.classList.add('hidden');
+                        }, 6000);
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
